@@ -19,7 +19,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="details/[id]" options={{ headerShown: false }} />
         <Stack.Screen
-          name="modal"
+          name="crop.modal"
           options={{ presentation: "modal", title: "New Crop" }}
         />
       </Stack>
