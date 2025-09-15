@@ -1,50 +1,58 @@
-# Welcome to your Expo app 👋
+### Mobile Application Case for SevenApps
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+### Application brief:
 
-1. Install dependencies
+Develop a React Native Video Diary App where users can:
+• Import videos,
+• Crop a specific segment of 5 seconds,
+• Add details such as name and description,
+• Save cropped videos to a list for future reference.
+The app should prioritize simplicity, efficiency, and scalability, adhering to modern React Native development practices
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+### Application Requirements: 
 
-   ```bash
-   npx expo start
-   ```
+1. Main Screen: Cropped Video List
+• Display a list of previously cropped videos.
+• Implement persistent storage (e.g., Zustand with AsyncStorage or an alternative state management solution).
+• Allow users to tap a video in the list to navigate to the Details Page.
+2. Details Page
+• Display the selected video with its:
+• Name,
+• Description.
+• Keep the UI minimalistic, focusing on the video and its associated metadata.
+3. Crop Modal
+• Step 1: Video Selection
+• Allow users to select a video from their device.
+4. Video Cropping
+• Implement video cropping functionality using expo-trim-video.
+• The trimVideo function under expo-trim-video script should execute via Tanstack Query, ensuring asynchronous
+operations and a robust API integration.
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Starting The Case:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+**IOS**
+```sh
+npm install && npx expo run:ios
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**ANDROID**
+```sh
+npm install && npx expo run:android
+```
 
-## Learn more
+Key considerations:
 
-To learn more about developing your project with Expo, look at the following resources:
+- Application scrumber logic is buggy, they will be fixed soon,
+- Video trimming works well
+- Video listing works well
+- Refactoring for folder and files are necessary for some part of the application
+- Test coverage is 0%, tests will be added
+- Video Description page works well
+- Back button implemented
+- Loadings implemented
+- Error handling not implemented
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
