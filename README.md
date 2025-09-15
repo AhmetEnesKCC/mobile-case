@@ -56,3 +56,12 @@ Key considerations:
 - Loadings implemented
 - Error handling not implemented
 
+### Showcase
+
+<img width="770" height="1648" alt="image" src="https://github.com/user-attachments/assets/3e95fad5-bf6e-4ea6-83c2-5f7a099546e6" />
+
+<img width="385" height="824" alt="Screenshot 2025-09-15 at 20 28 21" src="https://github.com/user-attachments/assets/b90945e1-536a-4549-89c0-7a8ad63ce0b8" />
+
+https://github.com/user-attachments/assets/548669fc-015a-4137-b54e-371f7799c017
+
+
