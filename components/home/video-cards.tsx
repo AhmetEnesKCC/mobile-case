@@ -1,4 +1,3 @@
-import mockVideos from "@/mock/videos";
 import { useVideoStore } from "@/store/stores/video.store";
 import React from "react";
 import { FlatList } from "react-native";
@@ -10,7 +9,7 @@ const VideoCards = () => {
     <FlatList
       className="w-full "
       contentContainerClassName="gap-6"
-      data={[...videos, ...mockVideos]}
+      data={[...videos]}
       keyExtractor={({ id }) => String(id)} // If autoincrement id chosen the key should be string, so converted it to string
       renderItem={({ item }) => <VideoCard video={item} />}
     />

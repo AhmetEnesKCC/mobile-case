@@ -3,7 +3,10 @@ type CropSecondEndType = number | null;
 type CropSecondEndsType = [CropSecondEndType, CropSecondEndType];
 
 type CropFormType = {
-  video_uri: string;
+  video: {
+    uri: string;
+    duration: number;
+  };
   name: string;
   description: string;
   cropped_seconds: CropSecondEndsType;

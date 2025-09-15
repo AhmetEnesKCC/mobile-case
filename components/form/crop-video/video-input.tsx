@@ -1,30 +1,36 @@
 import { videoUtil } from "@/utils";
 import { useVideoPlayer, VideoView } from "expo-video";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, View } from "react-native";
 
 type PropsType = {
-  value: string | null;
-  onChange: (uri: string) => void;
+  value: CropFormType["video"];
+  onChange: (params: CropFormType["video"]) => void;
 };
 
 const VideoInput = (props: PropsType) => {
+  const [value, setValue] = useState<CropFormType["video"] | null>(null);
+
   const handlePickVideo = async () => {
     const asset = await videoUtil.pickVideo();
     if (asset.success && asset.data?.uri) {
-      props.onChange(asset.data?.uri);
+      setValue({ uri: asset.data?.uri, duration: 0 });
     } else {
       console.log("error when picking video");
     }
   };
 
-  const player = useVideoPlayer(props.value);
+  const player = useVideoPlayer(props.value, (p) => {
+    console.log(p.duration);
+  });
 
   useEffect(() => {
-    if (props.value) {
+    if (value) {
+      // In simulator duration comes 0 so i used hard coded 30 here
+      props.onChange({ uri: value.uri, duration: 30 });
       player.play();
     }
-  }, [props.value, player]);
+  }, [value, player]);
 
   return (
     <View className="w-full aspect-video border-[1px] border-gray-500 rounded-xl items-center justify-center">
